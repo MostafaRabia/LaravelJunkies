@@ -1,0 +1,5 @@
+@yield('top')
+@include(app('shop_view').'.Header')
+@yield('center')
+@include(app('shop_view').'.Footer')
+@yield('bottom')
