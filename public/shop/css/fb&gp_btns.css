@@ -1,0 +1,64 @@
+.facebook-btn,
+.gplus-btn {
+  display: block;
+  float: right;
+  width: 51%;
+  height: 35px;
+  margin-top: 20px;
+  padding: 0 7px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font: 14px roboto;
+  text-align: left;
+  transition: background-color 1s ease, color 0.7s ease, box-shadow 1s ease;
+}
+
+.facebook-btn {
+  background-color: #3B5998;
+  color: #fff;
+}
+
+.gplus-btn {
+  background-color: #d34836;
+  color: #fff;
+}
+
+.facebook-btn:hover,
+.gplus-btn:hover {
+  box-shadow: 0 0 1px #999;
+}
+
+.facebook-btn:hover {
+  background-color: #fff;
+  color: #3B5998;
+}
+
+.gplus-btn:hover {
+  background-color: #fff;
+  color: #d34836;
+}
+
+.facebook-btn i,
+.gplus-btn i {
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+  border-right: 1px solid #fff;
+  margin-right: 10px;
+  transition: border-right-color 0.7s ease;
+}
+
+.facebook-btn:hover i {
+  border-right: 1px solid #3B5998;
+}
+
+.gplus-btn:hover i {
+  border-right: 1px solid #d34836;
+}
+
+.facebook-btn span,
+.gplus-btn span {
+  text-transform: capitalize;
+}

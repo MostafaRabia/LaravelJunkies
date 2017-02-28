@@ -1,0 +1,49 @@
+- Write Must Be:
+-- Vars Must Be 
+	-> If It Two Words Or More -> $smallCapital
+	-> If It One Word -> $small
+-- Functions Must Be
+	-> If It Two Words Or More -> smallCapital()
+	-> If It One Word -> small()
+-- Names Of Tables In Database Muse Be Like His Job And
+	-> If It Two Words Or More -> Name Of Table(_)His Job -> user_id
+-- Classes Name In Html Must Be
+	-> If It Two Words Or More -> small-small
+	-> If It One Word -> small
+	-> Between Words We Will Put -
+-- Id & Name Of Input In Html Must Be
+	-> If One Word -> small
+    	-> If Two Words Or More -> smallCapital
+-- Names Of Files & Controles Must Be
+ 	-> If One Word -> File.blade.php
+    	-> If Two Words Or More -> FileFile.blade.php
+-- Commit In Github Must Be
+	-> Your Task
+-- Comment In Programming Must Be
+	-> Explain What Does It Do
+////////////////////////////
+Admin Css -> public admin css
+Admin Js -> public admin js
+Shop Css -> public shop css
+Shop Js -> public shop js
+Images -> public images
+Admins Blades -> admin
+Shops Blades -> shop
+///////////////////////////
+// For Defaults
+$pathsArray = [
+    'admin_css'		=> url('public/admin/css'),
+    'admin_js'		=> url('public/admin/js'),
+    'admin_image'	=> url('public/admin/images'),
+    'shop_css'		=> url('public/shop/css'),
+    'shop_js'		=> url('public/shop/js'),
+    'shop_image'	=> url('public/shop/images'),
+    'shop_view'		=> 'shop',
+    'admin_view'	=> 'admin',
+];
+foreach ($pathsArray as $Name => $Path) {
+    app()->singleton($Name,function() use ($Path){
+        return $Path;
+    });
+}
+// To Use It app('css') / {{app('css')}}
