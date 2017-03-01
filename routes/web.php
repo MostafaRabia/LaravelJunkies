@@ -17,4 +17,8 @@ Route::get('/', function () {
 
 Route::resource('/','FrontController');
 //Route::resource('/cart','CartController');
-Route::get('/cartlaravel','CartController@index');
+Route::get('/cart','CartController@index');
+Route::get('/cart/{cart}/add','CartController@create');
+Route::get('/cart/{cart}/edit','CartController@edit');
+Route::post('cart/{cart}/update','CartController@update');
+Route::get('/cart/{cart}/delete','CartController@destroy');

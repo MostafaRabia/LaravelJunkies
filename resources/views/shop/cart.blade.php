@@ -38,44 +38,13 @@
                 <td>Tax: {{Cart::tax()}}</td>
               </tr>
             </tbody>
-          </table>  		 						 			    
+          </table>                            
             </div>
             @else
             <div class="col-md-10">
                 <h3>You Have No Items In Your Cart</h3>
             </div>
-            <div class="rsidebar span_1_of_left">
-                <div class="top-border"> </div>
-                <div class="border">
-                    <link href="css/default.css" rel="stylesheet" type="text/css" media="all" />
-                    <link href="css/nivo-slider.css" rel="stylesheet" type="text/css" media="all" />
-                    <script src="js/jquery.nivo.slider.js"></script>
-                    <script type="text/javascript">
-                        $(window).load(function () {
-                            $('#slider').nivoSlider();
-                        });
-                    </script>
-                    <div class="slider-wrapper theme-default">
-                        <div id="slider" class="nivoSlider">
-                            <img src="{{app('shop_image')}}/t-img1.jpg"  alt="" />
-                            <img src="{{app('shop_image')}}/t-img2.jpg"  alt="" />
-                            <img src="{{app('shop_image')}}/t-img3.jpg"  alt="" />
-                        </div>
-                    </div>
-                    <div class="btn"><a href="single.html">Check it Out</a></div>
-                </div>
-                <div class="top-border"> </div>
-                <div class="sidebar-bottom">
-                    <h2 class="m_1">Newsletters<br> Signup</h2>
-                    <p class="m_text">Lorem ipsum dolor sit amet, consectetuer</p>
-                    <div class="subscribe">
-                        <form>
-                            <input name="userName" type="text" class="textbox">
-                            <input type="submit" value="Subscribe">
-                        </form>
-                    </div>
-                </div>
-            </div>
+            @endif
             <div class="clear"></div>
         </div>
     </div>

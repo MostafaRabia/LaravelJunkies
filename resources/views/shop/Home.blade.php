@@ -50,7 +50,7 @@
                                 <div class="product_image">
                                     <img src="{{app('shop_image')}}/pic.jpg" alt=""/>
                                 </div>
-                                <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
+                                <div class="sale-box"><span class="on_sale title_shop">New</span></div> 
                                 <div class="price">
                                     <div class="cart-left">
                                         <p class="title">Lorem Ipsum simply</p>
@@ -60,7 +60,7 @@
                                     </div>
                                     <div class="cart-right"> </div>
                                     <div class="clear"></div>
-                                </div>				
+                                </div>              
                             </div>
                         </a>
                     </div>
@@ -79,7 +79,7 @@
                                     </div>
                                     <div class="cart-right"> </div>
                                     <div class="clear"></div>
-                                </div>				
+                                </div>              
                             </div>
                         </a>
                     </div>
@@ -89,7 +89,7 @@
                                 <div class="product_image">
                                     <img src="{{app('shop_image')}}/pic2.jpg" alt=""/>
                                 </div>
-                                <div class="sale-box1"><span class="on_sale title_shop">Sale</span></div>	
+                                <div class="sale-box1"><span class="on_sale title_shop">Sale</span></div>   
                                 <div class="price">
                                     <div class="cart-left">
                                         <p class="title">Lorem Ipsum simply</p>
@@ -100,12 +100,12 @@
                                     </div>
                                     <div class="cart-right"> </div>
                                     <div class="clear"></div>
-                                </div>				
+                                </div>              
                             </div>
                         </a>
                     </div>
                     <div class="clear"></div>
-                </div>	
+                </div>  
                 <div class="top-box">
                      @foreach($products as $product)
                     <div class="col_1_of_3 span_1_of_3">
@@ -124,7 +124,7 @@
                                     </div>
                                     <div class="cart-right"> </div>
                                     <div class="clear"></div>
-                                </div>				
+                                </div>              
                             </div>
                         </a>
                     </div>
@@ -135,7 +135,7 @@
                                 <div class="product_image">
                                     <img src="{{app('shop_image')}}/pic4.jpg" alt=""/>
                                 </div>
-                                <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
+                                <div class="sale-box"><span class="on_sale title_shop">New</span></div> 
                                 <div class="price">
                                     <div class="cart-left">
                                         <p class="title">Lorem Ipsum simply</p>
@@ -145,7 +145,7 @@
                                     </div>
                                     <div class="cart-right"> </div>
                                     <div class="clear"></div>
-                                </div>				
+                                </div>              
                             </div>
                         </a>
                     </div>
@@ -164,12 +164,12 @@
                                     </div>
                                     <div class="cart-right"> </div>
                                     <div class="clear"></div>
-                                </div>				
+                                </div>              
                             </div>
                         </a>
                     </div>
                     <div class="clear"></div>
-                </div>	
+                </div>  
                 <div class="top-box1">
                     <div class="col_1_of_3 span_1_of_3">
                         <a href="single.html">
@@ -177,7 +177,7 @@
                                 <div class="product_image">
                                     <img src="{{app('shop_image')}}/pic6.jpg" alt=""/>
                                 </div>
-                                <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
+                                <div class="sale-box"><span class="on_sale title_shop">New</span></div> 
                                 <div class="price">
                                     <div class="cart-left">
                                         <p class="title">Lorem Ipsum simply</p>
@@ -187,7 +187,7 @@
                                     </div>
                                     <div class="cart-right"> </div>
                                     <div class="clear"></div>
-                                </div>				
+                                </div>              
                             </div>
                         </a>
                     </div>
@@ -197,7 +197,7 @@
                                 <div class="product_image">
                                     <img src="{{app('shop_image')}}/pic7.jpg" alt=""/>
                                 </div>
-                                <div class="sale-box1"><span class="on_sale title_shop">Sale</span></div>	
+                                <div class="sale-box1"><span class="on_sale title_shop">Sale</span></div>   
                                 <div class="price">
                                     <div class="cart-left">
                                         <p class="title">Lorem Ipsum simply</p>
@@ -208,7 +208,7 @@
                                     </div>
                                     <div class="cart-right"> </div>
                                     <div class="clear"></div>
-                                </div>				
+                                </div>              
                             </div>
                         </a>
                     </div>
@@ -218,7 +218,7 @@
                                 <div class="product_image">
                                     <img src="{{app('shop_image')}}/pic8.jpg" alt=""/>
                                 </div>
-                                <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
+                                <div class="sale-box"><span class="on_sale title_shop">New</span></div> 
                                 <div class="price">
                                     <div class="cart-left">
                                         <p class="title">Lorem Ipsum simply</p>
@@ -228,12 +228,12 @@
                                     </div>
                                     <div class="cart-right"> </div>
                                     <div class="clear"></div>
-                                </div>				
+                                </div>              
                             </div>
                         </a>
                     </div>
                     <div class="clear"></div>
-                </div>	
+                </div>  
                 <h2 class="head">Staff Pick</h2>
                 <div class="top-box1">
                     <div class="col_1_of_3 span_1_of_3">
@@ -242,7 +242,7 @@
                                 <div class="product_image">
                                     <img src="{{app('shop_image')}}/pic8.jpg" alt=""/>
                                 </div>
-                                <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
+                                <div class="sale-box"><span class="on_sale title_shop">New</span></div> 
                                 <div class="price">
                                     <div class="cart-left">
                                         <p class="title">Lorem Ipsum simply</p>
@@ -252,7 +252,7 @@
                                     </div>
                                     <div class="cart-right"> </div>
                                     <div class="clear"></div>
-                                </div>				
+                                </div>              
                             </div>
                         </a>
                     </div>
@@ -271,7 +271,7 @@
                                     </div>
                                     <div class="cart-right"> </div>
                                     <div class="clear"></div>
-                                </div>				
+                                </div>              
                             </div>
                         </a>
                     </div>
@@ -281,7 +281,7 @@
                                 <div class="product_image">
                                     <img src="{{app('shop_image')}}/pic2.jpg" alt=""/>
                                 </div>
-                                <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
+                                <div class="sale-box"><span class="on_sale title_shop">New</span></div> 
                                 <div class="price">
                                     <div class="cart-left">
                                         <p class="title">Lorem Ipsum simply</p>
@@ -291,13 +291,13 @@
                                     </div>
                                     <div class="cart-right"> </div>
                                     <div class="clear"></div>
-                                </div>				
+                                </div>              
                             </div>
                         </a>
                     </div>
                     <div class="clear"></div>
-                </div>	
-                <h2 class="head">New Products</h2>	
+                </div>  
+                <h2 class="head">New Products</h2>  
                 <div class="section group">
                     <div class="col_1_of_3 span_1_of_3">
                         <a href="single.html">
@@ -305,7 +305,7 @@
                                 <div class="product_image">
                                     <img src="{{app('shop_image')}}/pic5.jpg" alt=""/>
                                 </div>
-                                <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
+                                <div class="sale-box"><span class="on_sale title_shop">New</span></div> 
                                 <div class="price">
                                     <div class="cart-left">
                                         <p class="title">Lorem Ipsum simply</p>
@@ -315,7 +315,7 @@
                                     </div>
                                     <div class="cart-right"> </div>
                                     <div class="clear"></div>
-                                </div>				
+                                </div>              
                             </div>
                         </a>
                     </div>
@@ -325,7 +325,7 @@
                                 <div class="product_image">
                                     <img src="{{app('shop_image')}}/pic2.jpg" alt=""/>
                                 </div>
-                                <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
+                                <div class="sale-box"><span class="on_sale title_shop">New</span></div> 
                                 <div class="price">
                                     <div class="cart-left">
                                         <p class="title">Lorem Ipsum simply</p>
@@ -335,7 +335,7 @@
                                     </div>
                                     <div class="cart-right"> </div>
                                     <div class="clear"></div>
-                                </div>				
+                                </div>              
                             </div>
                         </a>
                     </div>
@@ -345,7 +345,7 @@
                                 <div class="product_image">
                                     <img src="{{app('shop_image')}}/pic3.jpg" alt=""/>
                                 </div>
-                                <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
+                                <div class="sale-box"><span class="on_sale title_shop">New</span></div> 
                                 <div class="price">
                                     <div class="cart-left">
                                         <p class="title">Lorem Ipsum simply</p>
@@ -355,12 +355,12 @@
                                     </div>
                                     <div class="cart-right"> </div>
                                     <div class="clear"></div>
-                                </div>				
+                                </div>              
                             </div>
                         </a>
                     </div>
                     <div class="clear"></div>
-                </div>			 						 			    
+                </div>                                                  
             </div>
             <div class="rsidebar span_1_of_left">
                 <div class="top-border"> </div>

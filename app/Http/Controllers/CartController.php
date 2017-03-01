@@ -25,9 +25,11 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($productId)
     {
-        //
+        $product = Product::find($productId);
+        Cart::add($productId,$product->name,1,$product->price,['size' => 'large']);
+        return redirect()->back();   
     }
 
     /**
@@ -58,9 +60,12 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id,$productId)
     {
-        //
+        $product = Product::find($id);
+        Cart::content($product);
+        Cart::add($productId,$product->name,1,$product->price,['size'=>'larag']);
+        return redirect()->back();
     }
 
     /**
@@ -72,7 +77,8 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Cart::update($id,$request->qty);
+        return back();
     }
 
     /**
@@ -83,6 +89,7 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Cart::remove($id);
+        return back();
     }
 }
