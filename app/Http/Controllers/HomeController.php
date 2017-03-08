@@ -60,7 +60,9 @@ class HomeController extends Controller
 
     public function ShowEeditProducts()
     {
-        return view('admin/add-product');
+        $products = products::all();
+        $categories = categories::all();
+        return view('admin/edit-product', compact('products', 'categories'));
     }
 
     public function ShowAddProduct()

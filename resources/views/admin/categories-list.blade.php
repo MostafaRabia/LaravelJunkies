@@ -9,7 +9,7 @@
                 <!-- WIDGET TICKET TABLE -->
                 <div class="widget widget-table">
                     <div class="widget-header">
-                        <h3><i class="fa fa-group"></i> Books </h3> <em>- Books List</em>
+                        <h3><i class="fa fa-group"></i> Categories  </h3> <em>- Categories List</em>
                     </div>
                     <div class="widget-content">
                         <div class="tab-content">
