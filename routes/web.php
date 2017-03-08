@@ -25,5 +25,7 @@ Route::post('edit-product','productsController@editProduct');
 Route::get('deleteCat/{id}','categoriesController@deleteCat');
 Route::get('deleteProduct/{id}','productsController@deleteProduct');
 /* End Admin */
-
+/* Start Product */
+Route::get('product/{id}','Product@showProduct')->where('id','[0-9]+');
+/* End Product */
 

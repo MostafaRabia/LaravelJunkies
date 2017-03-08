@@ -64,7 +64,7 @@
                     </div>
                     <div class="menu">
                         <ul class="megamenu skyblue">
-                            <li class="active grid"><a href="index.html">Home</a></li>
+                            <li class="active grid"><a href="{{url('/')}}">Home</a></li>
                             <li><a class="color4" href="#">women</a>
                                 <div class="megapanel">
                                     <div class="row">
@@ -174,7 +174,7 @@
                             </li>
                         </ul>
                         <ul class="last"><li>
-                            <a href="{{url('/cartlaravel')}}">Cart({{Cart::count()}})</a></li></ul>
+                            <a href="{{url('/cart')}}">Cart({{Cart::count()}})</a></li></ul>
                     </div>
                 </div>
                 <div class="clear"></div>

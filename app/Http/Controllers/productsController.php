@@ -10,7 +10,7 @@ class productsController extends Controller
     public function postProduct()
     {
         products::create(request()->all());
-        request()->file('product_image')->store('public/productImages');
+        request()->file('product_image')->store('public/shop/images');
         return redirect('add-product');
     }
 

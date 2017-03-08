@@ -15,7 +15,7 @@ class FrontController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('shop.home',compact('products'));
+        return view('shop.Home',compact('products'));
     }
 
     /**

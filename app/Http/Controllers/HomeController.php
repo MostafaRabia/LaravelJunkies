@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\books;
 use App\categories;
-use App\category;
 use App\contact;
 use App\notes;
 use App\products;
@@ -23,13 +22,16 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-
     public function index()
     {
-        if (Auth::user()->user_admin == 1)
-            return redirect('categories-list');
-        else
-            return view('shop/Home');
+        if (auth()->check()){
+            if (Auth::user()->user_admin == 1){
+                return redirect('categories-list');
+            }
+        }else{
+            $getAllCategories = categories::all();
+            return view('shop/Home',['getAllCategories'=>$getAllCategories]);
+        }
     }
 
     public function ShowCategoriesList()

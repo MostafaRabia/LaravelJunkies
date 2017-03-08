@@ -1,3 +1,6 @@
+@php
+    use App\products;
+@endphp
 @extends(app('shop_view').'.Index')
 @section('center')
 <!-- start slider -->
@@ -42,357 +45,38 @@
     <div class="wrap">
         <div class="section group">
             <div class="cont span_2_of_3">
-                <h2 class="head">Featured Products</h2>
+            @foreach($getAllCategories as $Category)
+                <h2 class="head">{{$Category->categories_name}}</h2>
                 <div class="top-box">
+                @php
+                    $getAllProductsFromCategory = products::where('product_category',$Category->id)->get();
+                @endphp
+                @foreach($getAllProductsFromCategory as $Product)
                     <div class="col_1_of_3 span_1_of_3"> 
-                        <a href="single.html">
+                        <a href="{{url('product/'.$Product->id)}}">
                             <div class="inner_content clearfix">
                                 <div class="product_image">
-                                    <img src="{{app('shop_image')}}/pic.jpg" alt=""/>
+                                    <img src="{{app('shop_image')}}/{{$Product->product_image}}" alt=""/>
                                 </div>
                                 <div class="sale-box"><span class="on_sale title_shop">New</span></div> 
                                 <div class="price">
                                     <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
+                                        <p class="title">{{$Product->product_name}}</p>
                                         <div class="price1">
-                                            <span class="actual">$12.00</span>
+                                            <span class="actual">{{$Product->product_price}}</span>
                                         </div>
                                     </div>
-                                    <div class="cart-right"> </div>
+                                    <div class="cart-right"></div>
                                     <div class="clear"></div>
                                 </div>              
                             </div>
                         </a>
+                        <a href='{{url("/cart")}}'>Add To Cart</a>
                     </div>
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="single.html">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img src="{{app('shop_image')}}/pic1.jpg" alt=""/>
-                                </div>
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">$12.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="cart-right"> </div>
-                                    <div class="clear"></div>
-                                </div>              
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="single.html">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img src="{{app('shop_image')}}/pic2.jpg" alt=""/>
-                                </div>
-                                <div class="sale-box1"><span class="on_sale title_shop">Sale</span></div>   
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="reducedfrom">$66.00</span>
-                                            <span class="actual">$12.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="cart-right"> </div>
-                                    <div class="clear"></div>
-                                </div>              
-                            </div>
-                        </a>
-                    </div>
-                    <div class="clear"></div>
-                </div>  
-                <div class="top-box">
-                     @foreach($products as $product)
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="single.html">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img src="{{app('shop_image')}}/pic3.jpg" alt=""/>
-                                </div>
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">{{$product->name}}</p>
-                                        <div class="price1">
-                                            <span class="actual">{{$product->price}}</span>
-                                            <a href="cart/{{$product->id}}/add" class="btn btn-success pull-left">Add To Cart</a>
-                                        </div>
-                                    </div>
-                                    <div class="cart-right"> </div>
-                                    <div class="clear"></div>
-                                </div>              
-                            </div>
-                        </a>
-                    </div>
-                    @endforeach
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="single.html">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img src="{{app('shop_image')}}/pic4.jpg" alt=""/>
-                                </div>
-                                <div class="sale-box"><span class="on_sale title_shop">New</span></div> 
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">$12.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="cart-right"> </div>
-                                    <div class="clear"></div>
-                                </div>              
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="single.html">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img src="{{app('shop_image')}}/pic5.jpg" alt=""/>
-                                </div>
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">$12.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="cart-right"> </div>
-                                    <div class="clear"></div>
-                                </div>              
-                            </div>
-                        </a>
-                    </div>
-                    <div class="clear"></div>
-                </div>  
-                <div class="top-box1">
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="single.html">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img src="{{app('shop_image')}}/pic6.jpg" alt=""/>
-                                </div>
-                                <div class="sale-box"><span class="on_sale title_shop">New</span></div> 
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">$12.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="cart-right"> </div>
-                                    <div class="clear"></div>
-                                </div>              
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="single.html">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img src="{{app('shop_image')}}/pic7.jpg" alt=""/>
-                                </div>
-                                <div class="sale-box1"><span class="on_sale title_shop">Sale</span></div>   
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="reducedfrom">$66.00</span>
-                                            <span class="actual">$12.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="cart-right"> </div>
-                                    <div class="clear"></div>
-                                </div>              
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="single.html">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img src="{{app('shop_image')}}/pic8.jpg" alt=""/>
-                                </div>
-                                <div class="sale-box"><span class="on_sale title_shop">New</span></div> 
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">$12.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="cart-right"> </div>
-                                    <div class="clear"></div>
-                                </div>              
-                            </div>
-                        </a>
-                    </div>
-                    <div class="clear"></div>
-                </div>  
-                <h2 class="head">Staff Pick</h2>
-                <div class="top-box1">
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="single.html">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img src="{{app('shop_image')}}/pic8.jpg" alt=""/>
-                                </div>
-                                <div class="sale-box"><span class="on_sale title_shop">New</span></div> 
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">$12.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="cart-right"> </div>
-                                    <div class="clear"></div>
-                                </div>              
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="single.html">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img src="{{app('shop_image')}}/pic4.jpg" alt=""/>
-                                </div>
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">$12.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="cart-right"> </div>
-                                    <div class="clear"></div>
-                                </div>              
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="single.html">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img src="{{app('shop_image')}}/pic2.jpg" alt=""/>
-                                </div>
-                                <div class="sale-box"><span class="on_sale title_shop">New</span></div> 
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">$12.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="cart-right"> </div>
-                                    <div class="clear"></div>
-                                </div>              
-                            </div>
-                        </a>
-                    </div>
-                    <div class="clear"></div>
-                </div>  
-                <h2 class="head">New Products</h2>  
-                <div class="section group">
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="single.html">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img src="{{app('shop_image')}}/pic5.jpg" alt=""/>
-                                </div>
-                                <div class="sale-box"><span class="on_sale title_shop">New</span></div> 
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">$12.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="cart-right"> </div>
-                                    <div class="clear"></div>
-                                </div>              
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="single.html">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img src="{{app('shop_image')}}/pic2.jpg" alt=""/>
-                                </div>
-                                <div class="sale-box"><span class="on_sale title_shop">New</span></div> 
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">$12.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="cart-right"> </div>
-                                    <div class="clear"></div>
-                                </div>              
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col_1_of_3 span_1_of_3">
-                        <a href="single.html">
-                            <div class="inner_content clearfix">
-                                <div class="product_image">
-                                    <img src="{{app('shop_image')}}/pic3.jpg" alt=""/>
-                                </div>
-                                <div class="sale-box"><span class="on_sale title_shop">New</span></div> 
-                                <div class="price">
-                                    <div class="cart-left">
-                                        <p class="title">Lorem Ipsum simply</p>
-                                        <div class="price1">
-                                            <span class="actual">$12.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="cart-right"> </div>
-                                    <div class="clear"></div>
-                                </div>              
-                            </div>
-                        </a>
-                    </div>
-                    <div class="clear"></div>
-                </div>                                                  
-            </div>
-            <div class="rsidebar span_1_of_left">
-                <div class="top-border"> </div>
-                <div class="border">
-                    <link href="css/default.css" rel="stylesheet" type="text/css" media="all" />
-                    <link href="css/nivo-slider.css" rel="stylesheet" type="text/css" media="all" />
-                    <script src="js/jquery.nivo.slider.js"></script>
-                    <script type="text/javascript">
-                        $(window).load(function () {
-                            $('#slider').nivoSlider();
-                        });
-                    </script>
-                    <div class="slider-wrapper theme-default">
-                        <div id="slider" class="nivoSlider">
-                            <img src="{{app('shop_image')}}/t-img1.jpg"  alt="" />
-                            <img src="{{app('shop_image')}}/t-img2.jpg"  alt="" />
-                            <img src="{{app('shop_image')}}/t-img3.jpg"  alt="" />
-                        </div>
-                    </div>
-                    <div class="btn"><a href="single.html">Check it Out</a></div>
+                @endforeach
                 </div>
-                <div class="top-border"> </div>
-                <div class="sidebar-bottom">
-                    <h2 class="m_1">Newsletters<br> Signup</h2>
-                    <p class="m_text">Lorem ipsum dolor sit amet, consectetuer</p>
-                    <div class="subscribe">
-                        <form>
-                            <input name="userName" type="text" class="textbox">
-                            <input type="submit" value="Subscribe">
-                        </form>
-                    </div>
-                </div>
+                <div class="clear"></div>
+            @endforeach                                                 
             </div>
             <div class="clear"></div>
         </div>

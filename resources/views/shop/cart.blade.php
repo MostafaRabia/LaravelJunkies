@@ -4,7 +4,7 @@
     <div class="wrap">
         <div class="section group">
             <div class="cont span_2_of_3">
-            @if(sizeof(Cart::countent()) > 0)
+            @if(sizeof(Cart::count()) > 0)
             <table class="table table-striped table-hover table-responsive">
               <thead>
                 <tr>

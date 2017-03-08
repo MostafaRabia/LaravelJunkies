@@ -13,7 +13,7 @@
     <!-- CSS -->
     <link href="{{asset('public/admin/css/bootstrap.min.css')}}" rel=" stylesheet" type="text/css">
     <link href="{{asset('public/admin/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('public/admin/css/main.css" rel="stylesheet')}}" type="text/css">
+    <link href="{{asset('public/admin/css/main.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('public/admin/css/my-custom-styles.css')}}" rel="stylesheet" type="text/css">
     <!--[if lte IE 9]>
     <link href="{{asset('admin/css/main-ie.css" rel="stylesheet')}}" type="text/css"/>
