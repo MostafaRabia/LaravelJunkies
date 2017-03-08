@@ -12,5 +12,6 @@ class products extends Model
         'product_category',
         'product_image',
         'product_details',
+        'product_count'
     ];
 }

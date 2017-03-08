@@ -3,15 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\products;
-use Illuminate\Http\Request;
 
 class productsController extends Controller
 {
     public function postProduct()
     {
-        products::create(request()->all());
-        request()->file('product_image')->store('public/productImages');
-        return redirect('add-product');
+        $product = products::where('product_name', '=', request()->product_name);
+
+        if ($product->count() > 0) {
+            $product = new products();
+            $product->product_count = 10;
+            $product->save();
+        } else {
+            products::create(request()->all());
+            request()->file('product_image')->store('public/productImages');
+            return redirect('add-product');
+        }
     }
 
     public function deleteProduct($id)

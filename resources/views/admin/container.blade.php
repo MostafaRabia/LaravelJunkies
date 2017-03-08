@@ -6,14 +6,15 @@
 <!--<![endif]-->
 
 <head>
-    <title>Maktabti</title>
+    <title>LaravelJunkies
+    </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <!-- CSS -->
     <link href="{{asset('public/admin/css/bootstrap.min.css')}}" rel=" stylesheet" type="text/css">
     <link href="{{asset('public/admin/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('public/admin/css/main.css" rel="stylesheet')}}" type="text/css">
+    <link href="{{asset('public/admin/css/main.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('public/admin/css/my-custom-styles.css')}}" rel="stylesheet" type="text/css">
     <!--[if lte IE 9]>
     <link href="{{asset('admin/css/main-ie.css" rel="stylesheet')}}" type="text/css"/>
