@@ -36,6 +36,7 @@
                 <td>Total: {{Cart::total()}}</td>
                 <td>Items: {{Cart::count()}}</td>
                 <td>Tax: {{Cart::tax()}}</td>
+                <td>{!! Form::open(['url'=>'checkout','method'=>'post']) !!}{!! Form::submit('checkout') !!}{!! Form::close() !!}</td>
               </tr>
             </tbody>
           </table>                            

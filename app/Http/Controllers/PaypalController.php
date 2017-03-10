@@ -29,17 +29,7 @@ class PaypalController extends Controller
 
     }
 
-    public function getCheckout()
-    {
-        if(!Session::has('cart'))
-        {
-            return view('shop.shopping-cart');
-        }
-        $oldCart = Session::get('cart');
-        $cart = new Cart($oldCart);
-        $total = $cart->totalPrice;
-        return view('shop.checkout',['total'=>$total]);
-    }
+    
 
 
     public function postCheckout(Request $request)
@@ -48,9 +38,6 @@ class PaypalController extends Controller
         {
             return redirect()->route('/');
         }
-        $oldCart = Session::get('cart');
-        $cart = new Cart($oldCart);
-        $total = $cart->totalPrice;
         //dd($oldCart,$cart,$total);
         $payer = PayPal::Payer();
         $payer->setPaymentMethod('paypal');
