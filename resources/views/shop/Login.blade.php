@@ -6,7 +6,7 @@
 					<h4 class="title">New Customers</h4>
 					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan</p>
 					<div class="button1">
-					   <a href="register.html"><input type="submit" name="Submit" value="Create an Account"></a>
+					   <a href="{{url('user/register')}}"><input type="submit" name="Submit" value="Create an Account"></a>
 					 </div>
 					 <div class="clear"></div>
 				</div>
@@ -35,7 +35,7 @@
 						            <i aria-hidden='true' class='fa fa-facebook'></i>
 						            <span>login with facebook</span>
 					          	</a>
-					          	<a href='{{url("google/login")}}' class='gplus-btn gplus-login'>
+					          	<a href='{{url("google/redirect")}}' class='gplus-btn gplus-login'>
 						            <i aria-hidden='true' class='fa fa-google-plus'></i>
 						            <span>login with google plus</span>
 					          	</a>

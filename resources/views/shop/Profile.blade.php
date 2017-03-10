@@ -11,7 +11,6 @@
 <table id="getaboutuser-table" class="display" cellspacing="0" width="100%">
     <thead>
         <tr>
-            <th>id</th>
             <th>email</th>
             <th>getaboutuser_name</th>
             <th>getaboutuser_addres</th>
@@ -25,15 +24,14 @@
     </thead>
     <tbody>
         <tr>
-            <td>{{$getAboutUser->id}}</td>
             <td>{{$getAboutUser->email}}</td>
-            <td>{{$getAboutUser->getaboutuser_name}}</td>
-            <td>{{$getAboutUser->getaboutuser_addres}}</td>
-            <td>{{$getAboutUser->getaboutuser_country}}</td>
-            <td>{{$getAboutUser->getaboutuser_city}}</td>
-            <td>{{$getAboutUser->getaboutuser_code}}</td>
-            <td>{{$getAboutUser->getaboutuser_phone_number}}</td>
-            <td>{{$getAboutUser->getaboutuser_prices}}</td>
+            <td>{{$getAboutUser->user_name}}</td>
+            <td>{{$getAboutUser->user_addres}}</td>
+            <td>{{$getAboutUser->user_country}}</td>
+            <td>{{$getAboutUser->user_city}}</td>
+            <td>{{$getAboutUser->user_code}}</td>
+            <td>{{$getAboutUser->user_phone_number}}</td>
+            <td>{{$getAboutUser->user_prices}}</td>
             <td><a href='{{url("edit")}}/{{$getAboutUser->id}}'>edit</a></td>
         </tr>
     </tbody>

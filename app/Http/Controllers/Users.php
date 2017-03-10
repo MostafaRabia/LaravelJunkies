@@ -26,6 +26,9 @@ class Users extends Controller
     		return redirect()->back()->withErrors($validator)->withInput();
     	}else{
     		$add = new User;
+            if ($r->has('id')){
+                $add->id = $r->input('id');
+            }
     		$add->email = $r->input('user_email');
     		$add->password = bcrypt($r->input('user_password'));
     		$add->user_name = $r->input('user_name');

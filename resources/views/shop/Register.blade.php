@@ -5,14 +5,17 @@
     	      <h4 class="title">Create an Account</h4>
     	      	{!! Form::open(['url'=>'user/register','method'=>'post']) !!}
     			 <div class="col_1_of_2 span_1_of_2">
-		   			 <div><input type="text" value="@if($providerUser) @if(!empty($providerUser->getEmail())) {!!$providerUser->getName()!!} @endif @endif" placeholder ="Name" onblur="if (this.value == '') {this.value = 'Name';}" name='user_name'></div>
-		    			<div><input type="text" value="@if($providerUser) @if(!empty($providerUser->getEmail())) {!!$providerUser->getEmail()!!} @endif @endif" placeholder ="Email" onblur="if (this.value == '') {this.value = 'E-Mail';}" name='user_email'></div>
+		   			 <div><input type="text" value="@if(!empty($providerUser)) {!!$providerUser->getName()!!} @endif" placeholder ="Name" onblur="if (this.value == '') {this.value = 'Name';}" name='user_name'></div>
+		    			<div><input type="text" value="@if(!empty($providerUser))  {!!$providerUser->getEmail()!!} @endif" placeholder ="Email" onblur="if (this.value == '') {this.value = 'E-Mail';}" name='user_email'></div>
 		    			<div><input type="text" placeholder ="password" onblur="if (this.value == '') {this.value = 'password';}" name='user_password'></div>
 		    	 </div>
+		    	 @if(!empty($providerUser))
+		    	 	<input type='hidden' name='id' value="{!!$providerUser->getId()!!}">
+		    	 @endif	
 		    	  <div class="col_1_of_2 span_1_of_2">	
-		    		<div><input type="text" value="Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Address';}" name='user_addres'></div>
+		    		<div><input type="text" placeholder="addres" name='user_addres'></div>
 		    		<div><select id="country" name="user_country" onchange="change_country(this.value)" class="frm-field required">
-		            <option value="null">Select a Country</option>         
+		            <option value="">Select a Country</option>         
 		            <option value="AX">Åland Islands</option>
 		            <option value="AF">Afghanistan</option>
 		            <option value="AL">Albania</option>
@@ -208,7 +211,7 @@
 		            <option value="SA">Saudi Arabia</option>
 		            <option value="SN">Senegal</option>
 		         </select></div>		        
-		          <div><input type="text" value="City" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'City';}" name='user_city'></div>
+		          <div><input type="text" placeholder="City" name='user_city'></div>
 		           <div>
 		          </div>
 		          	<input type="text" value="" class="code" name='user_code'> - <input type="text" value="" class="number" name='user_phone'>
