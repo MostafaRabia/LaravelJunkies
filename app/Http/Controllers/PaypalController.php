@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Session;
 use Paypal;
 use Redirect;
+use Cart as Cart;
 
 class PaypalController extends Controller
 {
