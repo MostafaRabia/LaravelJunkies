@@ -16,7 +16,6 @@
         {!! Html::script(app('shop_js').'/fwslider.js') !!}
         {!! Html::script(app('shop_js').'/jquery.easydropdown.js') !!}
         {!! Html::script(app('shop_js').'/vue.js') !!}
-        {!! Html::script(app('shop_js').'/vue-script.js') !!}
         <!-- start menu -->
         <script>
             $(document).ready(function () {
