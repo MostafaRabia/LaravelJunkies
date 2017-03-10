@@ -23,8 +23,23 @@ class SocialAuthController extends Controller
             Auth::loginUsingId($getUser->id);
             return redirect('/');
         }else{
-            View::share('providerUser',$providerUser);
-            return redirect('user/register');
+            return view(app('shop_view').'.Register',['providerUser'=>$providerUser]);
+        }
+    }
+    public function redirectGoogle()
+    {
+        return Socialite::driver('google')->redirect();   
+    }   
+
+    public function callbackGoogle()
+    {
+        $providerUser = Socialite::driver('google')->user();
+        $getUser = User::where('id',$providerUser->getId())->first();
+        if (!empty($getUser->email)){
+            Auth::loginUsingId($getUser->id);
+            return redirect('/');
+        }else{
+            return view(app('shop_view').'.Register',['providerUser'=>$providerUser]);
         }
     }
 }

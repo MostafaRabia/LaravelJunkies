@@ -42,6 +42,8 @@ Route::group(['middleware'=>'guest'],function(){
 	Route::get('user/login','Users@showLogin');
 	Route::get('facebook/redirect','SocialAuthController@redirectFacbook');
 	Route::get('facebook/callback','SocialAuthController@callbackFacbook');
+	Route::get('google/redirect','SocialAuthController@redirectGoogle');
+	Route::get('google/callback','SocialAuthController@callbackGoogle');
 });
 //Route::get('google/login',);
 Route::group(['middleware'=>'user'],function(){

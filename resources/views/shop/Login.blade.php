@@ -35,7 +35,7 @@
 						            <i aria-hidden='true' class='fa fa-facebook'></i>
 						            <span>login with facebook</span>
 					          	</a>
-					          	<a href='{{url("google/login")}}' class='gplus-btn gplus-login'>
+					          	<a href='{{url("google/redirect")}}' class='gplus-btn gplus-login'>
 						            <i aria-hidden='true' class='fa fa-google-plus'></i>
 						            <span>login with google plus</span>
 					          	</a>
