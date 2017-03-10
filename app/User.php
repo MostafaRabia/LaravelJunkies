@@ -21,6 +21,7 @@ class User extends Authenticatable
         'user_addres',
         'user_country',
         'user_city',
+        'user_code',
         'user_phone_number',
         'user_prices',
         'user_admin',

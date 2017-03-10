@@ -71,10 +71,10 @@ class RegisterController extends Controller
             'user_country' => $data['user_country'],
             'user_city' => $data['user_city'],
             'user_phone_number' => $data['user_phone_number'],
-            'user_prices' => $data['user_prices'],
-            'user_admin' => $data['user_admin'],
-            'user_confirmation' => $data['user_confirmation'],
-            'user_banned' => $data['user_banned'],
+            'user_prices' => 0,
+            'user_admin' => 1,
+            'user_confirmation' => 0,
+            'user_banned' => 0,
         ]);
     }
 }

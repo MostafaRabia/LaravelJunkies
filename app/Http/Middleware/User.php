@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class RedirectIfAuthenticated
+class User
 {
     /**
      * Handle an incoming request.
@@ -18,6 +18,8 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (auth()->check()){
+            return $next($request);
+        }else{
             return redirect('/home');
         }
         return $next($request);

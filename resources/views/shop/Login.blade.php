@@ -14,7 +14,7 @@
 				<div class="login-title">
 	           		<h4 class="title">Registered Customers</h4>
 					<div id="loginbox" class="loginbox">
-						<form action="" method="post" name="login" id="login-form">
+						{!! Form::open(['url'=>'user/login','method'=>'post']) !!}
 						  <fieldset class="input">
 						    <p id="login-form-username">
 						      <label for="modlgn_username">Email</label>
@@ -31,17 +31,17 @@
 							   {!! Html::style(app('shop_css').'/font-awesome.min.css') !!}
 							   {!! Html::style(app('shop_css').'/fb&gp_btns.css') !!}
 							    <input type="submit" name="Submit" class="button" value="Login"><div class="clear"></div>
-							    <button class='facebook-btn facebook-login'>
+							    <a href='{{url("facebook/redirect")}}' class='facebook-btn facebook-login'>
 						            <i aria-hidden='true' class='fa fa-facebook'></i>
 						            <span>login with facebook</span>
-					          	</button>
-					          	<button class='gplus-btn gplus-login'>
+					          	</a>
+					          	<a href='{{url("google/login")}}' class='gplus-btn gplus-login'>
 						            <i aria-hidden='true' class='fa fa-google-plus'></i>
 						            <span>login with google plus</span>
-					          	</button>
+					          	</a>
 							 </div>
 						  </fieldset>
-						 </form>
+						  {!! Form::close() !!}
 					</div>
 			    </div>
 				</div>

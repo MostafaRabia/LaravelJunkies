@@ -14,4 +14,7 @@ class products extends Model
         'product_details',
         'product_count'
     ];
+    public function catigory(){
+    	return $this->belongsTo('App\categories','product_category');
+    }
 }

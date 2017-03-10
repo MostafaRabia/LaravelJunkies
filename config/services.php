@@ -34,5 +34,10 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    'facebook' => [
+        'client_id' => '1116001888521817',
+        'client_secret' => 'f82ede7261c63b4939d2cf4b69834937',
+        'redirect' => 'http://localhost/LaravelJunkies/facebook/callback',
+    ],
 
 ];

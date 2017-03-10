@@ -2,49 +2,44 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\products;
+use Validator;
 
 class productsController extends Controller
 {
-    public function postProduct()
+    public function postProduct(Request $r)
     {
-<<<<<<< HEAD
-        products::create(request()->all());
-        request()->file('product_image')->store('public/shop/images');
-        return redirect('add-product');
-=======
-        $product = products::where('product_name', '=', request()->product_name);
-
-        if ($product->count() > 0) {
-            $product = new products();
-            $product->product_count = 10;
-            $product->save();
-        } else {
-            products::create(request()->all());
-            request()->file('product_image')->store('public/productImages');
-            return redirect('add-product');
+        $validator = Validator::make($r->all(),[
+            'product_name' =>  'required|unique:products',
+            'product_price' =>  'required',
+            'product_category' =>  'required',
+            'product_image'=>  'image',
+            'product_details'=>  'required',
+        ]);
+        if ($validator->fails()){
+            return redirect()->back()->withErrors($validator)->withInput();
+        }else{
+            if ($r->hasFile('product_image')){
+                $imageName = time().'.'.$r->product_image->getClientOriginalExtension();
+                $r->product_image->move(public_path('shop/images'), $imageName);
+            }
+            $add = new products;
+            $add->product_name = $r->input('product_name');
+            $add->product_price = $r->input('product_price');
+            $add->product_category = $r->input('product_category');
+            $add->product_image = $imageName;
+            $add->product_details = $r->input('product_details');
+            $add->product_count = 1;
+            $add->save();
+            return redirect('edit-product');
         }
->>>>>>> eb5788a62296d63c73c251b9dd5fde9882d99dd0
     }
 
     public function deleteProduct($id)
     {
         $product = products::find($id);
         $product->delete();
-        return redirect('products-list');
-    }
-
-    public function editProduct()
-    {
-        $id = request()->product_id;
-        $product = products::find($id);
-        $product->product_name = request()->product_name;
-        $product->product_price = request()->product_price;
-        $product->product_category = request()->product_category;
-        $product->product_image = request()->product_image;
-        $product->product_count = request()->product_count;
-        $product->product_details = request()->product_details;
-        $product->save();
         return redirect('edit-product');
     }
 }

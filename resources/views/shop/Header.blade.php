@@ -49,8 +49,15 @@
                         <li class="active"><a href="login.html">Account</a></li> |
                         <li><a href="checkout.html">Wishlist</a></li> |
                         <li><a href="checkout.html">Checkout</a></li> |
-                        <li><a href="login.html">Log In</a></li> |
-                        <li><a href="register.html">Sign Up</a></li>
+                        @if(auth()->check())
+                            @if(auth()->user()->user_admin==0)
+                                <li><a href="{{url('profile')}}">Profile</a></li> |
+                                <li><a href="{{url('logout')}}">Logout</a></li>
+                            @endif
+                        @else
+                            <li><a href="{{url('user/login')}}">Log In</a></li> |
+                            <li><a href="{{url('user/register')}}">Sign Up</a></li>
+                        @endif
                     </ul>
                 </div>
                 <div class="clear"></div>

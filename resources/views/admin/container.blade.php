@@ -113,9 +113,15 @@
                                     class="text">Products </span>
                             <i class="toggle-icon fa fa-angle-left"></i></a>
                         <ul class="sub-menu">
-                            <li class=" "><a href="products-list"><span class="text">Products list</span></a></li>
                             <li class=" "><a href="add-product"><span class="text">Add Products</span></a></li>
-                            <li class=" "><a href="edit-product"><span class="text">Edit Products</span></a></li>
+                            <li class=" "><a href="{{url('edit-product')}}"><span class="text">Edit Products</span></a></li>
+                        </ul>
+                    </li>
+                    <li class=""><a href="books-list" class="js-sub-menu-toggle"><i class="fa fa-navicon"></i><span
+                                    class="text">profiles </span>
+                            <i class="toggle-icon fa fa-angle-left"></i></a>
+                        <ul class="sub-menu">
+                            <li class=" "><a href="{{url('profiles-list')}}"><span class="text">profiles list</span></a></li>
                         </ul>
                     </li>
 
@@ -124,6 +130,7 @@
             <!-- /main-nav -->
         </div>
     </div>
+
 
     @yield("content")
 
