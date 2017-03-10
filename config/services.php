@@ -45,4 +45,9 @@ return [
         'redirect' => 'http://localhost/LaravelJunkies/google/callback',
     ],
 
+    'paypal' => [
+    'client_id' => 'AfHl2JfJHDAVI0SCLh6_3_sCML-nwH5CgNtElf-dwYD44ywCh96G6f93p-KsGm9i-kpnggC_XE-HEgOq',
+    'secret' => 'EGGmPddcW5qFjdq9JJYHxds3sVoCLdShTuxZeU301AwRxc2t_Uu7_-U5ve7WmIizG03VdEczxD96K06S'
+    ],
+
 ];
