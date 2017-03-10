@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Socialite;
 use Auth;
 use App\User;
+use Illuminate\Support\Facades\View;
 
 class SocialAuthController extends Controller
 {
@@ -22,10 +23,8 @@ class SocialAuthController extends Controller
             Auth::loginUsingId($getUser->id);
             return redirect('/');
         }else{
-            app()->singleton('providerUser',function() use ($providerUser){
-                return $providerUser;
-            });
-            return redirect('user/register')->withName($providerUser);
+            View::share('providerUser',$providerUser);
+            return redirect('user/register');
         }
     }
 }

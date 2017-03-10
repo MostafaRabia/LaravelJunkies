@@ -8,6 +8,7 @@ Route::post('add-new-product','productsController@postProduct');
 Route::post('edit_product','productsController@editProduct');
 Route::post('edit/{id}','HomeController@edit_product_post')->where('id','[0-9]+');
 Route::post('edit/user/{id}','HomeController@edituser_post')->where('id','[0-9]+');
+Route::post('edit/{id}','Users@editUserPost')->where('id','[0-9]+');
 
 
 Auth::routes();
@@ -48,4 +49,6 @@ Route::group(['middleware'=>'user'],function(){
 		auth()->logout();
 		return redirect()->back();
 	});
+	Route::get('profile/{id}','Users@showProfile')->where('id','[0-9]+');
+	Route::get('edit/{id}','Users@showEdit')->where('id','[0-9]+');
 });

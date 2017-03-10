@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -10,9 +9,6 @@ use Auth;
 class Users extends Controller
 {
 	public function showRegister(){
-		if (Route::currentRouteName()){
-			return view(app('shop_view').'.Register',['providerUser'=>Route::currentRouteName()]);
-		}
 		return view(app('shop_view').'.Register');
 	}
 	public function Register(Request $r){
@@ -66,5 +62,47 @@ class Users extends Controller
     	}else{
     		return redirect()->back()->withErrors(['Wrong'=>'Username or Password is Wrong']);
     	}
+    }
+    public function showProfile($id){
+    	$getAboutUser = User::find($id);
+    	return view(app('shop_view').'.Profile',['getAboutUser'=>$getAboutUser]);
+    }
+    public function showEdit($id){
+    	$getAboutUser = User::find($id);
+    	return view(app('shop_view').'.editProfile',['getAboutUser'=>$getAboutUser,'id'=>$id]);
+    }
+    public function editUserPost(Request $r,$id){
+    	$editUser = User::find($id);
+        $validator = Validator::make($r->all(),[
+            'email' =>  'required|email',
+            'name' =>  'required',
+            'old-password' =>  'required',
+            'now-password' =>  'required',
+            'new-password'=>  'required',
+            'address'=>  'required',
+            'user_country'=>  'required',
+            'city'=>  'required',
+            'code'=>  'required',
+            'phone_number'=>  'required',
+        ]);
+        if ($validator->fails()){
+            return redirect()->back()->withErrors($validator)->withInput();
+        }else{
+        	if ($r->input('old-password')==$r->input('now-password')){
+        		$new_password = bcrypt($r->input('new-password'));
+        	}else{
+        		$new_password = $editUser->password;
+        	}
+            $editUser->email = $r->input('email');
+            $editUser->password = $new_password;
+            $editUser->user_name = $r->input('name');
+            $editUser->user_addres = $r->input('address');
+            $editUser->user_country = $r->input('user_country');
+            $editUser->user_city = $r->input('city');
+            $editUser->user_code = $r->input('code');
+            $editUser->user_phone_number = $r->input('phone_number');
+            $editUser->save();
+            return redirect('profile/'.$id);
+        }
     }
 }

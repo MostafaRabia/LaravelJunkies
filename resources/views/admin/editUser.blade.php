@@ -1,6 +1,6 @@
 @extends('admin.container')
 @section('content')
-{!! Form::open(['method'=>'post','url'=>'edit/user/'.$id,'files'=>true]) !!}
+{!! Form::open(['method'=>'post','url'=>'edit/user/'.$id]) !!}
 <div class='form-group col-sm-9 col-sm-offset-3'>
 		{!! Form::label('user_admin','user_admin') !!}
 		{!! Form::number('user_admin',$getUsers->user_admin,['class'=>'form-control']) !!}

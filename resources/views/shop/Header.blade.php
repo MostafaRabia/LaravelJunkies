@@ -51,7 +51,7 @@
                         <li><a href="checkout.html">Checkout</a></li> |
                         @if(auth()->check())
                             @if(auth()->user()->user_admin==0)
-                                <li><a href="{{url('profile')}}">Profile</a></li> |
+                                <li><a href="{{url('profile/'.auth()->user()->id)}}">Profile</a></li> |
                                 <li><a href="{{url('logout')}}">Logout</a></li>
                             @endif
                         @else
