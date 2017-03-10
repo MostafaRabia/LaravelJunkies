@@ -71,7 +71,7 @@
                                 </div>              
                             </div>
                         </a>
-                        <a href='{{url("/cart")}}'>Add To Cart</a>
+                        <a href='{{url("/cart")}}' class="vue-add">Add To Cart</a>
                     </div>
                 @endforeach
                 </div>

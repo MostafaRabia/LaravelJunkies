@@ -10,7 +10,7 @@ Route::post('edit/{id}','HomeController@edit_product_post')->where('id','[0-9]+'
 Route::post('edit/user/{id}','HomeController@edituser_post')->where('id','[0-9]+');
 Route::post('edit/{id}','Users@editUserPost')->where('id','[0-9]+');
 
-
+ 
 Auth::routes();
 Route::get('/cart','CartController@index');
 Route::get('/cart/{cart}/add','CartController@create');
@@ -18,6 +18,23 @@ Route::get('/cart/{cart}/edit','CartController@edit');
 Route::get('/cart/{cart}/delete','CartController@destroy');
 Route::get('/','HomeController@index');
 Route::get('/home','HomeController@index');
+
+Route::get('/checkout',[
+		'uses' => 'PaypalController@getCheckout',
+		'as'   => 'checkout'
+		]);
+	Route::post('/checkout',[
+		'uses' => 'PaypalController@postCheckout',
+		'as'   => 'checkout'
+		]);
+	//Route::get('checkout','PaypalController@checkout');
+	Route::get('done',function(){
+		return 'Done';
+	});
+	Route::get('cancel',function(){
+		return 'Cancel';
+	});
+	//Route::get('all','PaypalController@all');
 
 /* Admin */
 Route::group(['middleware'=>'admin'],function(){

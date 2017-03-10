@@ -240,7 +240,7 @@ return [
         //For Shoppingcart
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
         //For Paybal 
-        'Paypal' => 'Netshell\Paypal\Facades\Paypal',
+        'Paypal' => Netshell\Paypal\Facades\Paypal::class,
     ],
 
 ];
