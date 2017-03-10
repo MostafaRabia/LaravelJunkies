@@ -9,7 +9,10 @@ Route::post('edit_product','productsController@editProduct');
 Route::post('edit/{id}','HomeController@edit_product_post')->where('id','[0-9]+');
 Route::post('edit/user/{id}','HomeController@edituser_post')->where('id','[0-9]+');
 Route::post('edit/{id}','Users@editUserPost')->where('id','[0-9]+');
-
+Route::post('/checkout',[
+	'uses' => 'PaypalController@postCheckout',
+	'as'   => 'checkout'
+]);
  
 Auth::routes();
 Route::get('/cart','CartController@index');
@@ -39,10 +42,6 @@ Route::get('product/{id}','Product@showProduct')->where('id','[0-9]+');
 Route::group(['middleware'=>'guest'],function(){
 	Route::get('user/register','Users@showRegister');
 	Route::get('user/login','Users@showLogin');
-	Route::get('facebook/redirect','SocialAuthController@redirectFacbook');
-	Route::get('facebook/callback','SocialAuthController@callbackFacbook');
-	Route::get('google/redirect','SocialAuthController@redirectGoogle');
-	Route::get('google/callback','SocialAuthController@callbackGoogle');
 });
 //Route::get('google/login',);
 Route::group(['middleware'=>'user'],function(){
@@ -54,18 +53,14 @@ Route::group(['middleware'=>'user'],function(){
 	Route::get('edit/{id}','Users@showEdit')->where('id','[0-9]+');
 });
 Route::group(['middleware'=>'cart'],function(){
-
-	
-	//Route::get('checkout','PaypalController@checkout');
 	Route::get('done',function(){
 		return 'Done';
 	});
 	Route::get('cancel',function(){
 		return 'Cancel';
 	});
-	//Route::get('all','PaypalController@all');
 });
-Route::post('/checkout',[
-	'uses' => 'PaypalController@postCheckout',
-	'as'   => 'checkout'
-]);
+Route::get('facebook/redirect','SocialAuthController@redirectFacbook');
+	Route::get('facebook/callback','SocialAuthController@callbackFacbook');
+	Route::get('google/redirect','SocialAuthController@redirectGoogle');
+	Route::get('google/callback','SocialAuthController@callbackGoogle');

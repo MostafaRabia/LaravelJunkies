@@ -8,8 +8,8 @@
         {!! Html::style(app('shop_css').'/form.css') !!}
         {!! Html::style(app('shop_css').'/megamenu.css') !!}
         {!! Html::style(app('shop_css').'/fwslider.css') !!}
-        {!! Html::style('http://fonts.googleapis.com/css?family=Exo+2') !!}
-        {!! Html::script(app('shop_js').'/jquery1.min.js') !!}
+        {!! Html::style(app('shop_css').'/foundation.css') !!}
+        {!! Html::style('http://fonts.googleapis.com/css?family=Exo+2') !!}        {!! Html::script(app('shop_js').'/jquery1.min.js') !!}
         {!! Html::script(app('shop_js').'/megamenu.js') !!}
         {!! Html::script(app('shop_js').'/jquery-ui.min.js') !!}
         {!! Html::script(app('shop_js').'/css3-mediaqueries.js') !!}

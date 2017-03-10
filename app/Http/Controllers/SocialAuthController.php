@@ -18,7 +18,7 @@ class SocialAuthController extends Controller
     public function callbackFacbook()
     {
         $providerUser = Socialite::driver('facebook')->user();
-        $getUser = User::where('id',$providerUser->getId())->first();
+        $getUser = User::where('id_socialite',$providerUser->getId())->first();
         if (!empty($getUser->email)){
             Auth::loginUsingId($getUser->id);
             return redirect('/');
@@ -34,7 +34,7 @@ class SocialAuthController extends Controller
     public function callbackGoogle()
     {
         $providerUser = Socialite::driver('google')->user();
-        $getUser = User::where('id',$providerUser->getId())->first();
+        $getUser = User::where('id_socialite',$providerUser->getId())->first();
         if (!empty($getUser->email)){
             Auth::loginUsingId($getUser->id);
             return redirect('/');

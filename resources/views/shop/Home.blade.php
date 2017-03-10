@@ -3,6 +3,22 @@
 @endphp
 @extends(app('shop_view').'.Index')
 @section('center')
+{!! Html::script(app('shop_js').'/jquery1.min.js') !!}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.vue-add').on('click',function(){
+            $.ajax({
+               type:'get',
+               url:$(this).attr('hrefadd'),
+               data:'_token = <?php echo csrf_token() ?>',
+               success:function(data){
+                
+               }
+            });
+            return false;
+        });
+    });
+</script>
 <!-- start slider -->
 <div id="fwslider">
     <div class="slider_container">
@@ -71,7 +87,7 @@
                                 </div>              
                             </div>
                         </a>
-                        <a href='{{url("/cart/$Product->id/add")}}' class="vue-add">Add To Cart</a>
+                        <a hrefadd='{{url("/cart/$Product->id/add")}}' class="vue-add">Add To Cart</a>
                     </div>
                 @endforeach
                 </div>
