@@ -124,7 +124,7 @@ class HomeController extends Controller
         $editUser = User::find($id);
         $validator = Validator::make($r->all(),[
             'user_admin' =>  'required',
-            'user_banned' =>  'required',
+            'user_banned'=>  'required'
         ]);
         if ($validator->fails()){
             return redirect()->back()->withErrors($validator)->withInput();

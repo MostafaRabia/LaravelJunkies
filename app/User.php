@@ -25,7 +25,6 @@ class User extends Authenticatable
         'user_code',
         'user_phone_number',
         'user_admin',
-        'user_confirmation',
         'user_banned',
     ];
 

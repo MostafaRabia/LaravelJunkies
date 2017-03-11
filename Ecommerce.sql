@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 11, 2017 at 12:03 AM
+-- Generation Time: Mar 11, 2017 at 10:08 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.9
 
@@ -38,8 +38,8 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `categories_name`, `created_at`, `updated_at`) VALUES
-(1, 'Product1', '2017-03-03 18:37:20', '2017-03-10 10:56:54'),
-(2, 'TEst', '2017-03-08 20:00:00', '2017-03-08 20:00:00');
+(2, 'TEst', '2017-03-08 20:00:00', '2017-03-08 20:00:00'),
+(3, 'zz', '2017-03-10 21:58:55', '2017-03-10 21:58:55');
 
 -- --------------------------------------------------------
 
@@ -98,15 +98,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `product_name`, `product_price`, `product_category`, `product_image`, `product_details`, `product_count`, `created_at`, `updated_at`) VALUES
-(4, 'Test', 90, 1, '/opt/lampp/temp/phpkDjTFH', 'asdsadsadsaqqasdsadsadsaqqasdsadsadsaqqasdsadsadsaqqasdsadsadsaqqasdsadsadsaqqasdsadsadsaqqasdsadsadsaqqasdsadsadsaqqasdsadsadsaqqasdsadsadsaqqasdsadsadsaqqasdsadsadsaqqasdsadsadsaqqasdsadsad', 1, '2017-03-08 20:01:46', '2017-03-08 20:01:46'),
-(5, 'asdsadsad', 30, 1, '/opt/lampp/temp/phpNRVhR5', 'sazzxzxz', 1, '2017-03-08 20:05:04', '2017-03-08 20:05:04'),
 (6, 'qqqq', 90, 2, '/opt/lampp/temp/php6g4LaX', 'wwwwww', 1, '2017-03-08 20:05:15', '2017-03-08 20:05:15'),
 (7, 'xxxxxxxxxx', 20, 2, '/opt/lampp/temp/phplpUfNV', 'bbbbbbb', 1, '2017-03-08 20:05:24', '2017-03-08 20:05:24'),
 (8, 'nnnnnnn', 20, 2, '/opt/lampp/temp/php4cZ9Jv', 'hhhhh', 1, '2017-03-08 20:05:32', '2017-03-08 20:05:32'),
 (9, 'ffffffff', 10, 2, '/opt/lampp/temp/php8awANS', 'qqwe', 1, '2017-03-08 20:05:46', '2017-03-08 20:05:46'),
 (10, ',,,,,,,,', 65, 2, '/opt/lampp/temp/phpEly4Gy', 'ftu', 1, '2017-03-08 20:06:02', '2017-03-08 20:06:02'),
-(11, 'qweqwewq', 30, 1, '/opt/lampp/temp/phprY5s1B', 'zzzzzz', 1, '2017-03-10 13:24:11', '2017-03-10 13:24:11'),
-(13, 'Mostafarabia', 450, 1, '1489159628.png', 'asdweqweqw', 1, '2017-03-10 13:27:08', '2017-03-10 13:27:08');
+(14, 'asdsadsadsasdsadsadsa', 1000000, 3, '1489190423.png', 'kkyiuyiuy', 1, '2017-03-10 22:00:23', '2017-03-10 22:00:23');
 
 -- --------------------------------------------------------
 
@@ -116,7 +113,7 @@ INSERT INTO `products` (`id`, `product_name`, `product_price`, `product_category
 
 CREATE TABLE `users` (
   `id` bigint(255) UNSIGNED NOT NULL,
-  `id_socialite` double NOT NULL,
+  `id_socialite` double DEFAULT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `user_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -125,9 +122,7 @@ CREATE TABLE `users` (
   `user_city` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `user_code` int(10) DEFAULT NULL,
   `user_phone_number` double UNSIGNED DEFAULT NULL,
-  `user_prices` int(11) NOT NULL,
   `user_admin` int(11) NOT NULL,
-  `user_confirmation` int(11) NOT NULL,
   `user_banned` int(11) NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -182,7 +177,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
@@ -192,12 +187,12 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1456061391084800;
+  MODIFY `id` bigint(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Constraints for dumped tables
 --

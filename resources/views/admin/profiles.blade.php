@@ -42,7 +42,6 @@
                         <th>user_code</th>
                         <th>user_phone_number</th>
                         <th>user_admin</th>
-                        <th>user_confirmation</th>
                         <th>user_banned</th>
                         <th>edit</th>
                         <th>delete</th>
@@ -60,7 +59,6 @@
                         <td>{{$user->user_code}}</td>
                         <td>{{$user->user_phone_number}}</td>
                         <td>{{$user->user_admin}}</td>
-                        <td>{{$user->user_confirmation}}</td>
                         <td>{{$user->user_banned}}</td>
                         <td><a deletehref='{{url("delete/user")}}/{{$user->id}}' onclick="var href_delete = $(this).attr('deletehref');
                                  $('.modal_delete').modal('show');

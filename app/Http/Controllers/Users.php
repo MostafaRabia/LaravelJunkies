@@ -38,7 +38,6 @@ class Users extends Controller
     		$add->user_code = $r->input('user_code');
     		$add->user_phone_number = $r->input('user_phone');
     		$add->user_admin = 0;
-    		$add->user_confirmation = 0;
     		$add->user_banned = 0;
     		$add->save();
     		Auth::loginUsingId($add->id);
