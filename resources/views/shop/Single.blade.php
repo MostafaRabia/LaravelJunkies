@@ -19,7 +19,7 @@
 		         	<h3 class="m_3">{{$getAllAboutProduct->product_name}}</h3>
 		             <p class="m_5">{{$getAllAboutProduct->product_price}}</span></p>
 		         	 <div class="btn_form">
-						{!! Form::open(['url'=>'/cart','method'=>'get']) !!}
+						{!! Form::open(['url'=>'/cart/'.$getAllAboutProduct->id.'/add','method'=>'get']) !!}
 							<input type="submit" value="buy" title="">
 						{!! Form::close() !!}
 					 </div>

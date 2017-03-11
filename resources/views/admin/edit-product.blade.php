@@ -127,7 +127,7 @@
                 $('.modal-content_captin').text(details);">show details</button>
                         </td>
                         <td>{{$product->product_count}}</td>
-                        <td><a href='{{url("edit")}}/{{$product->id}}'>edit</a></td>
+                        <td><a href='{{url("edit/product")}}/{{$product->id}}'>edit</a></td>
                         <td><button onclick="var href_delete = $(this).attr('href-delete');
                                  $('.modal_delete').modal('show');
                                  $('.modal_delete a').attr('href',href_delete);" href-delete='{{url("deleteProduct")}}/{{$product->id}}'>delete</button></td>

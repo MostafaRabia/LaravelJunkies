@@ -102,10 +102,10 @@
                                     class="text">Categories </span>
                             <i class="toggle-icon fa fa-angle-down"></i></a>
                         <ul class="sub-menu open">
-                            <li class="active"><a href="categories-list"><span class="text">Categories list</span></a>
+                            <li class="active"><a href="{{url('categories-list')}}"><span class="text">Categories list</span></a>
                             </li>
-                            <li class=" "><a href="add-cat"><span class="text">Add Category</span></a></li>
-                            <li class=" "><a href="edit-cat"><span class="text">Edit Category</span></a></li>
+                            <li class=" "><a href="{{url('add-cat')}}"><span class="text">Add Category</span></a></li>
+                            <li class=" "><a href="{{url('edit-cat')}}"><span class="text">Edit Category</span></a></li>
                         </ul>
                     </li>
 
@@ -113,7 +113,7 @@
                                     class="text">Products </span>
                             <i class="toggle-icon fa fa-angle-left"></i></a>
                         <ul class="sub-menu">
-                            <li class=" "><a href="add-product"><span class="text">Add Products</span></a></li>
+                            <li class=" "><a href="{{url('add-product')}}"><span class="text">Add Products</span></a></li>
                             <li class=" "><a href="{{url('edit-product')}}"><span class="text">Edit Products</span></a></li>
                         </ul>
                     </li>

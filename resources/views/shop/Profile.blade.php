@@ -19,7 +19,6 @@
             <th>getaboutuser_city</th>
             <th>getaboutuser_code</th>
             <th>getaboutuser_phone_number</th>
-            <th>getaboutuser_prices</th>    
             <th>edit</th>    
         </tr>
     </thead>
@@ -27,14 +26,13 @@
         <tr>
             <td>{{$getAboutUser->id}}</td>
             <td>{{$getAboutUser->email}}</td>
-            <td>{{$getAboutUser->getaboutuser_name}}</td>
-            <td>{{$getAboutUser->getaboutuser_addres}}</td>
-            <td>{{$getAboutUser->getaboutuser_country}}</td>
-            <td>{{$getAboutUser->getaboutuser_city}}</td>
-            <td>{{$getAboutUser->getaboutuser_code}}</td>
-            <td>{{$getAboutUser->getaboutuser_phone_number}}</td>
-            <td>{{$getAboutUser->getaboutuser_prices}}</td>
-            <td><a href='{{url("edit")}}/{{$getAboutUser->id}}'>edit</a></td>
+            <td>{{$getAboutUser->user_name}}</td>
+            <td>{{$getAboutUser->user_addres}}</td>
+            <td>{{$getAboutUser->user_country}}</td>
+            <td>{{$getAboutUser->user_city}}</td>
+            <td>{{$getAboutUser->user_code}}</td>
+            <td>{{$getAboutUser->user_phone_number}}</td>
+            <td><a href='{{url("edit/user")}}/{{$getAboutUser->id}}'>edit</a></td>
         </tr>
     </tbody>
 </table>

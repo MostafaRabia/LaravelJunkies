@@ -5,8 +5,8 @@
     	      <h4 class="title">Create an Account</h4>
     	      	{!! Form::open(['url'=>'user/register','method'=>'post']) !!}
     			 <div class="col_1_of_2 span_1_of_2">
-		   			 <div><input type="text" value="@if($providerUser) @if(!empty($providerUser->getEmail())) {!!$providerUser->getName()!!} @endif @endif" placeholder ="Name" name='user_name'></div>
-		    			<div><input type="text" value="@if($providerUser) @if(!empty($providerUser->getEmail())) {!!$providerUser->getEmail()!!} @endif @endif" placeholder ="Email" name='user_email'></div>
+		   			 <div><input type="text" value="@if(!empty($providerUser)) @if(!empty($providerUser->getEmail())) {!!$providerUser->getName()!!} @endif @endif" placeholder ="Name" name='user_name'></div>
+		    			<div><input type="text" value="@if(!empty($providerUser)) @if(!empty($providerUser->getEmail())) {!!$providerUser->getEmail()!!} @endif @endif" placeholder ="Email" name='user_email'></div>
 		    			<div><input type="text" placeholder ="password" name='user_password'></div>
 		    	 </div>
 		    	 @if (!empty($providerUser))

@@ -24,7 +24,6 @@ class User extends Authenticatable
         'user_city',
         'user_code',
         'user_phone_number',
-        'user_prices',
         'user_admin',
         'user_confirmation',
         'user_banned',

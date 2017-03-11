@@ -41,7 +41,6 @@
                         <th>user_city</th>
                         <th>user_code</th>
                         <th>user_phone_number</th>
-                        <th>user_prices</th>
                         <th>user_admin</th>
                         <th>user_confirmation</th>
                         <th>user_banned</th>
@@ -60,14 +59,13 @@
                         <td>{{$user->user_city}}</td>
                         <td>{{$user->user_code}}</td>
                         <td>{{$user->user_phone_number}}</td>
-                        <td>{{$user->user_prices}}</td>
                         <td>{{$user->user_admin}}</td>
                         <td>{{$user->user_confirmation}}</td>
                         <td>{{$user->user_banned}}</td>
                         <td><a deletehref='{{url("delete/user")}}/{{$user->id}}' onclick="var href_delete = $(this).attr('deletehref');
                                  $('.modal_delete').modal('show');
                                  $('.modal_delete a').attr('href',href_delete);">delete</a></td>
-                        <td><a href='{{url("edit/user")}}/{{$user->id}}'>edit</a></td>
+                        <td><a href='{{url("edit")}}/{{$user->id}}'>edit</a></td>
                     </tr>
                 @endforeach
                 </tbody>
